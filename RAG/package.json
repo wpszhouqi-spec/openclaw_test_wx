@@ -1,0 +1,31 @@
+{
+  "name": "@openclaw/rag-milvus",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Milvus-backed RAG router for OpenClaw: knowledge hit → RAG, else current framework",
+  "type": "module",
+  "main": "./src/index.ts",
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "scripts": {
+    "milvus:up": "docker compose up -d",
+    "milvus:down": "docker compose down",
+    "ingest": "tsx src/cli.ts ingest",
+    "route": "tsx src/cli.ts route",
+    "ask": "tsx src/cli.ts ask",
+    "smoke": "tsx src/cli.ts smoke",
+    "typecheck": "tsc -p tsconfig.json --noEmit"
+  },
+  "dependencies": {
+    "@zilliz/milvus2-sdk-node": "^2.6.5"
+  },
+  "devDependencies": {
+    "@types/node": "^24.10.1",
+    "tsx": "^4.20.6",
+    "typescript": "^5.9.3"
+  },
+  "engines": {
+    "node": ">=22"
+  }
+}

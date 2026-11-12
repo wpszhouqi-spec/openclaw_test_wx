@@ -1,0 +1,10 @@
+{
+  "name": "@openclaw/rag-milvus",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Route knowledge questions through RAG; otherwise keep the current OpenClaw path.",
+  "type": "module",
+  "openclaw": {
+    "extensions": ["./index.ts"]
+  }
+}

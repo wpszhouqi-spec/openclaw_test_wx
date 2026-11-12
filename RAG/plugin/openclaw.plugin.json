@@ -1,0 +1,30 @@
+{
+  "id": "rag-milvus",
+  "name": "RAG Milvus Router",
+  "description": "Route knowledge questions through Milvus/local RAG; otherwise keep the current OpenClaw framework path.",
+  "version": "0.1.0",
+  "categories": ["other"],
+  "activation": {
+    "onStartup": true,
+    "onCapabilities": ["hook"]
+  },
+  "configSchema": {
+    "type": "object",
+    "additionalProperties": false,
+    "properties": {
+      "enabled": {
+        "type": "boolean",
+        "default": true
+      },
+      "hitThreshold": {
+        "type": "number",
+        "default": 0.22
+      },
+      "storeMode": {
+        "type": "string",
+        "enum": ["auto", "milvus", "local"],
+        "default": "local"
+      }
+    }
+  }
+}
